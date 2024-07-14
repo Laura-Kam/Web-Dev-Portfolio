@@ -7,3 +7,160 @@ Dark blue: #608991
 Call to action- peach: #FFB6B9 
 
 */
+
+/* css reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 8px;
+
+
+}
+
+
+/* better to put font in body tag for inheritance, and efficiency/ only elements inside body needed fonts */
+/* in the universal selector - takes up memory applies to all elements on page */
+body {
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #608991;
+}
+
+.header {
+height: 80vh;
+background-image: linear-gradient(to right,rgba(82, 117, 124, 0.877),rgba(113, 162, 170, 0.931)),url(../img/madrid-street.jpg);
+/* https://unsplash.com/photos/road-between-houses-Zy-W7KWEyFE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash */
+/* covers entire header element space */
+background-size: cover;
+/* keeps top of the image at the top when resized viewport */
+background-position: top;
+border-radius: 16px;
+/* this is the origin from where left and top are counted for logo-box */
+position: relative;
+}
+
+.logo-box {
+    /* //absolute position based on parent - header */
+position: absolute;
+/* top: 36px;
+left: 2%; */
+
+
+}
+
+.logo {
+    height: 156px;
+   border-radius: 16px;
+top: 10%;
+left: 40%;
+}
+
+.heading-primary{
+    color: white;
+    backface-visibility: hidden;
+    margin-bottom: 64px;
+  
+}
+
+.heading-primary-main{
+    color: white;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 4px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.heading-primary-sub{
+    color: white;
+
+    display: block;
+    font-weight: 400;
+    font-size: xx-large;
+    letter-spacing: 4px; 
+    animation: moveInRight 1s ease-out;
+   
+
+}
+
+.sub-paragraph{
+    color: white;
+    display: block;
+    font-weight: 300;
+    font-size: x-large;
+    letter-spacing: 4px; 
+    animation: moveInRight 1s ease-out;
+}
+
+.text-box{
+   /* position absolute is in reference to parent element - which needs a position: relative, absolute, fixed, or sticky */
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    /* this moves the element relative to current position -40% of its own width to the left and its own height upwards */
+    transform: translate(-50%, -40%);
+    /* the anchor tag is treated like text - so you can use text-align of its parent */
+    text-align: start;
+}
+/* 
+keyframes defines an animation rule which changes at specific times/points */
+
+@keyframes moveInLeft {
+    0% {
+opacity: 0;
+transform: translateX(-100px)
+    }
+    80% {
+transform: translate(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+opacity: 0;
+transform: translateX(100px)
+    }
+
+80% {
+        transform: translateX(-10px);
+}
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+/* the anchor tag is treated like text - so you can use text-align of its parent */
+/* link is a state of an anchor tag */
+/* link means an anchor is blue unvisited, and visited it turns purple
+after it is clicked in as a default colour. */
+
+.btn:link,
+.btn:visited{
+text-transform: normal;
+text-decoration: none;
+padding: 0px 12px 0px 12px;
+/* inline block respects margin and padding like block elements, and usually the content determines
+an inline block's widht and height whereas block you can set it */
+display: inline-block;
+margin: 4px;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.209); /* Simple shadow */
+}
+
+
+.btn-grey{
+    color: rgb(84, 84, 84);
+background-color: #e6e6e6;
+border-radius: 16px;
+
+}
