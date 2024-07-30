@@ -10,13 +10,19 @@ Call to action- peach: #FFB6B9
 
 /* css reset */
 
-* {
+*,
+*::after,
+* ::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    padding: 8px;
+    /* box-sizing isn't usually inheritable so we must set it */
+    box-sizing: inherit;
+    padding: 0.8rem;
+}
 
-
+/* This way it is more accessible by percentage depending on user css */
+html {
+    font-size: 62.5%;
 }
 
 
@@ -25,20 +31,20 @@ Call to action- peach: #FFB6B9
 body {
     font-family: "Outfit", sans-serif;
     font-weight: 400;
-    font-size: 16px;
     line-height: 1.7;
     color: #608991;
+    box-sizing: border-box;
 }
 
 .header {
-height: 80vh;
-background-image: linear-gradient(to right,rgba(82, 117, 124, 0.877),rgba(113, 162, 170, 0.931)),url(../img/madrid-street.jpg);
+height: 75vh;
+/* background-image: linear-gradient(to right,rgba(82, 117, 124, 0.877),rgba(113, 162, 170, 0.931)),url(../img/madrid-street.jpg); */
 /* https://unsplash.com/photos/road-between-houses-Zy-W7KWEyFE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash */
 /* covers entire header element space */
 background-size: cover;
 /* keeps top of the image at the top when resized viewport */
 background-position: top;
-border-radius: 16px;
+border-radius: 1.6rem;
 /* this is the origin from where left and top are counted for logo-box */
 position: relative;
 }
@@ -53,24 +59,33 @@ left: 2%; */
 }
 
 .logo {
-    height: 156px;
-   border-radius: 16px;
+    height: 15.6rem;
+   border-radius: 1.6rem;
 top: 10%;
 left: 40%;
 }
 
+.laura-image {
+    height: 24rem;
+   border-radius: 1.6rem;
+margin-left: 200px;
+display: block;
+
+}
+
 .heading-primary{
-    color: white;
+    color: #608991;
     backface-visibility: hidden;
-    margin-bottom: 64px;
+    margin-bottom: 7.2rem;
   
 }
 
 .heading-primary-main{
-    color: white;
+    color: #608991;
     display: block;
     font-weight: 700;
-    letter-spacing: 4px;
+    font-size: 4rem;
+    letter-spacing: 0.04rem;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -79,23 +94,23 @@ left: 40%;
 }
 
 .heading-primary-sub{
-    color: white;
+    color: #608991;
 
     display: block;
-    font-weight: 400;
-    font-size: xx-large;
-    letter-spacing: 4px; 
+    font-weight: 500;
+    font-size: 3.2rem;
+    letter-spacing: 0.4rem; 
     animation: moveInRight 1s ease-out;
    
 
 }
 
 .sub-paragraph{
-    color: white;
+    color: #608991;
     display: block;
     font-weight: 300;
     font-size: x-large;
-    letter-spacing: 4px; 
+    letter-spacing: 0.4rem; 
     animation: moveInRight 1s ease-out;
 }
 
@@ -115,10 +130,10 @@ keyframes defines an animation rule which changes at specific times/points */
 @keyframes moveInLeft {
     0% {
 opacity: 0;
-transform: translateX(-100px)
+transform: translateX(-10rem)
     }
     80% {
-transform: translate(10px);
+transform: translate(0.1rem);
     }
     100% {
         opacity: 1;
@@ -129,11 +144,11 @@ transform: translate(10px);
 @keyframes moveInRight {
     0% {
 opacity: 0;
-transform: translateX(100px)
+transform: translateX(10rem)
     }
 
 80% {
-        transform: translateX(-10px);
+        transform: translateX(-0.10rem);
 }
     100% {
         opacity: 1;
@@ -149,18 +164,63 @@ after it is clicked in as a default colour. */
 .btn:visited{
 text-transform: normal;
 text-decoration: none;
-padding: 0px 12px 0px 12px;
+padding: 0px 1.2rem 0px 1.2rem;
 /* inline block respects margin and padding like block elements, and usually the content determines
 an inline block's widht and height whereas block you can set it */
 display: inline-block;
-margin: 4px;
-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.209); /* Simple shadow */
+margin: 0.4rem;
+box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.209); /* Simple shadow */
+/* transitions to be applied to all css properties that are changed 
+see translate below- applies to movement*/
+transition: all .2s;
 }
 
+.btn:hover{
+    transform: translateY(-0.08rem);
+    /* arguments x, y, blue, colour and opacity */
+    box-shadow: 0 0.10rem 2.0rem rgba(0,0,0,.1);
+}
+
+.btn:active{
+    transform: translateY(0.05rem);
+    box-shadow: 0 0.5rem 0.1rem rgba(0,0,0,.05);
+}
 
 .btn-grey{
-    color: rgb(84, 84, 84);
-background-color: #e6e6e6;
-border-radius: 16px;
+    color: rgb(103, 103, 103);
+background-color: #ebebeb;
+border-radius: 1.6rem;
 
 }
+
+.btn-contact-me{
+    color: #D97D54;
+    font-weight: 600;
+    text-decoration: underline;
+    font-weight: 300;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 0.3rem;
+/* background-color: #e6e6e6;
+border-radius: 16px; */
+
+}
+
+.btn-contact-me:hover,
+tn-contact-me:active
+{
+   
+font-weight: 400;
+text-decoration-thickness: 0.3rem;
+}
+
+#hobbies-description {
+    font-weight: 300;
+    color: grey;
+    font-size: 2rem;
+    margin-top: 7.2rem;
+}
+
+
+
+
+
