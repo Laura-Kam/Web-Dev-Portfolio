@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
 
@@ -15,5 +17,46 @@
 
     <title>Laura Kam Web Dev</title>
   </head>
-  <body></body>
+  <body>
+    <!-- class naming system - block (BEM) -->
+    <header class="header">
+       <!-- class naming system - element in block (BEM) -->
+      <div class="header__logo-box">
+        <img
+          src="../starter/img/Lk-logo.png"
+          alt="logo with initials LK"
+ 
+          class="header__logo"
+        />
+      </div>
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+          <!-- class naming system BEM modifier changes style of the block -->
+          <span class="heading-primary--main"> I'm Laura Kam </span>
+          <span class="heading-primary--sub"
+            >Frontend Developer and UI Designer<br /><br>
+            <div>
+              <img
+                src="../starter/img/laura-pic.jpeg"
+                alt="logo with initials LK"
+                class="laura-image"
+              />
+            </div>
+            <span class="sub-paragraph">
+              Checkout my<a href="#" class="btn btn--grey">Projects</a>
+            <a href="#" class="btn btn--grey">CV</a>
+            <a href="#" class="btn btn--grey">Tech Stack</a>
+             my<a href="#" class="btn btn--grey">Testimonials</a>
+            or <a href="#" class="btn--contact-me">Contact me</a>
+            </span>
+            <br>
+            <!-- <span id="hobbies-description">When not coding, find me day-tripping to idyllicmedieval Spanish towns and shooting some hoops.</span> -->
+
+            
+          
+        </h1>
+        <!-- <a href="#" class="btn btn-coral">Checkout My Projects</a> -->
+      </div>
+    </header>
+  </body>
 </html>
