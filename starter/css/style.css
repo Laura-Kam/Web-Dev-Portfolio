@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 COLORS:
 
@@ -5,222 +6,223 @@ Light beige: #FAE3D9
 Medium blue: #8AC6D1
 Dark blue: #608991
 Call to action- peach: #FFB6B9 
+Subheading-text-dark-grey:#818181;
+paragraph-text-grey:
 
 */
-
 /* css reset */
-
 *,
 *::after,
 * ::before {
-    margin: 0;
-    padding: 0;
-    /* box-sizing isn't usually inheritable so we must set it */
-    box-sizing: inherit;
-    padding: 0.8rem;
+  margin: 0;
+  padding: 0;
+  /* box-sizing isn't usually inheritable so we must set it */
+  box-sizing: inherit;
+  padding: 0.8rem;
 }
 
 /* This way it is more accessible by percentage depending on user css */
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
-
 
 /* better to put font in body tag for inheritance, and efficiency/ only elements inside body needed fonts */
 /* in the universal selector - takes up memory applies to all elements on page */
 body {
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    color: #608991;
-    box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #608991;
+  box-sizing: border-box;
 }
 
 .header {
-height: 75vh;
-/* background-image: linear-gradient(to right,rgba(82, 117, 124, 0.877),rgba(113, 162, 170, 0.931)),url(../img/madrid-street.jpg); */
-/* https://unsplash.com/photos/road-between-houses-Zy-W7KWEyFE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash */
-/* covers entire header element space */
-background-size: cover;
-/* keeps top of the image at the top when resized viewport */
-background-position: top;
-border-radius: 1.6rem;
-/* this is the origin from where left and top are counted for logo-box */
-position: relative;
+  height: 75vh;
+  /* background-image: linear-gradient(to right,rgba(82, 117, 124, 0.877),rgba(113, 162, 170, 0.931)),url(../img/madrid-street.jpg); */
+  /* https://unsplash.com/photos/road-between-houses-Zy-W7KWEyFE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash */
+  /* covers entire header element space */
+  /* background-size: cover; */
+  /* keeps top of the image at the top when resized viewport */
+  /* background-position: top; */
+  border-radius: 1.6rem;
+  /* this is the origin from where left and top are counted for logo-box */
+  position: relative;
 }
 
 .header__logo-box {
-    /* //absolute position based on parent - header */
-position: absolute;
-/* top: 36px;
-left: 2%; */
-
-
+  /* //absolute position based on parent - header */
+  position: absolute;
+  /* top: 36px;
+  left: 2%; */
 }
 
 .header__logo {
-    height: 15.6rem;
-   border-radius: 1.6rem;
-top: 10%;
-left: 40%;
+  height: 15.6rem;
+  border-radius: 1.6rem;
+  top: 10%;
+  left: 40%;
 }
 
-.laura-image {
-    height: 24rem;
-   border-radius: 1.6rem;
-margin-left: 200px;
-display: block;
-
+.heading-primary {
+  color: #ffffff;
+  backface-visibility: hidden;
 }
 
-.heading-primary{
-    color: #608991;
-    backface-visibility: hidden;
-    margin-bottom: 7.2rem;
-  
+.heading-primary--main {
+  color: #608991;
+  display: block;
+  font-size: 7.2rem;
+  letter-spacing: 0.32rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  text-transform: normal;
+  text-align: center;
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 900;
 }
 
-.heading-primary--main{
-    color: #608991;
-    display: block;
-    font-weight: 700;
-    font-size: 4rem;
-    letter-spacing: 0.04rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    text-transform: uppercase;
-    text-align: center;
+.heading-primary--sub {
+  color: #959595;
+  display: block;
+  font-weight: 500;
+  font-size: 3.2rem;
+  letter-spacing: 0.5rem;
+  animation: moveInRight 1s ease-out;
+  font-family: "Work Sans", sans-serif;
 }
 
-.heading-primary--sub{
-    color: #608991;
-
-    display: block;
-    font-weight: 500;
-    font-size: 3.2rem;
-    letter-spacing: 0.4rem; 
-    animation: moveInRight 1s ease-out;
-   
-
+.sub-paragraph {
+  margin-top: 3.2rem;
+  color: #565656;
+  display: block;
+  font-weight: 300;
+  font-size: 2.2rem;
+  letter-spacing: 0.4rem;
+  padding: 0;
+  animation: moveInRight 1s ease-out;
 }
 
-.sub-paragraph{
-    color: #608991;
-    display: block;
-    font-weight: 300;
-    font-size: x-large;
-    letter-spacing: 0.4rem; 
-    animation: moveInRight 1s ease-out;
+.italics {
+  font-style: italic;
 }
 
-.header__text-box{
-   /* position absolute is in reference to parent element - which needs a position: relative, absolute, fixed, or sticky */
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    /* this moves the element relative to current position -40% of its own width to the left and its own height upwards */
-    transform: translate(-50%, -40%);
-    /* the anchor tag is treated like text - so you can use text-align of its parent */
-    text-align: start;
+.heading-primary--sub-hobbies {
+  font-size: 2rem;
 }
+
+.header__text-box {
+  /* position absolute is in reference to parent element - which needs a position: relative, absolute, fixed, or sticky */
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  /* this moves the element relative to current position -40% of its own width to the left and its own height upwards */
+  transform: translate(-50%, -40%);
+  /* the anchor tag is treated like text - so you can use text-align of its parent */
+  text-align: start;
+  width: 80%; /* Adjust as needed */
+  max-width: 1200px; /* Optional: To prevent it from becoming too wide on large screens */
+}
+
 /* 
 keyframes defines an animation rule which changes at specific times/points */
-
 @keyframes moveInLeft {
-    0% {
-opacity: 0;
-transform: translateX(-10rem)
-    }
-    80% {
-transform: translate(0.1rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translate(0.1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
-
 @keyframes moveInRight {
-    0% {
-opacity: 0;
-transform: translateX(10rem)
-    }
-
-80% {
-        transform: translateX(-0.10rem);
-}
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-0.1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 /* the anchor tag is treated like text - so you can use text-align of its parent */
 /* link is a state of an anchor tag */
 /* link means an anchor is blue unvisited, and visited it turns purple
 after it is clicked in as a default colour. */
-
 .btn:link,
-.btn:visited{
-text-transform: normal;
-text-decoration: none;
-padding: 0px 1.2rem 0px 1.2rem;
-/* inline block respects margin and padding like block elements, and usually the content determines
-an inline block's widht and height whereas block you can set it */
-display: inline-block;
-margin: 0.4rem;
-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.209); /* Simple shadow */
-/* transitions to be applied to all css properties that are changed 
-see translate below- applies to movement*/
-transition: all .2s;
+.btn:visited {
+  text-transform: normal;
+  text-decoration: none;
+  padding: 0px 1.2rem 0px 1.2rem;
+  /* inline block respects margin and padding like block elements, and usually the content determines
+  an inline block's widht and height whereas block you can set it */
+  display: inline-block;
+  margin: 0.8rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.209); /* Simple shadow */
+  /* transitions to be applied to all css properties that are changed 
+  see translate below- applies to movement*/
+  transition: all 0.2s;
 }
 
-.btn:hover{
-    transform: translateY(-0.08rem);
-    /* arguments x, y, blue, colour and opacity */
-    box-shadow: 0 0.10rem 2.0rem rgba(0,0,0,.1);
+.btn:hover {
+  transform: translateY(-0.08rem);
+  /* arguments x, y, blue, colour and opacity */
+  box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
-.btn:active{
-    transform: translateY(0.05rem);
-    box-shadow: 0 0.5rem 0.1rem rgba(0,0,0,.05);
+.btn:active {
+  transform: translateY(0.05rem);
+  box-shadow: 0 0.5rem 0.1rem rgba(0, 0, 0, 0.05);
 }
 
-.btn--grey{
-    color: rgb(103, 103, 103);
-background-color: #ebebeb;
-border-radius: 1.6rem;
-
+.btn--grey {
+  color: rgb(103, 103, 103);
+  background-color: #ebebeb;
+  border-radius: 1.6rem;
+  font-weight: 350;
 }
 
-.btn--contact-me{
-    color: #D97D54;
-    font-weight: 600;
-    text-decoration: underline;
-    font-weight: 300;
-    text-decoration-thickness: 0.2rem;
-    text-underline-offset: 0.3rem;
-/* background-color: #e6e6e6;
-border-radius: 16px; */
-
+.btn--contact-me {
+  color: #608991;
+  font-weight: 600;
+  text-decoration: none;
+  font-weight: 600;
+  /* background-color: #e6e6e6;
+  border-radius: 16px; */
 }
 
-.btn--contact-me:hover,
-tn-contact-me:active
-{
-   
-font-weight: 400;
-text-decoration-thickness: 0.3rem;
+.btn--contact-me:hover {
+  color: #608991;
+  font-weight: 700;
+  text-decoration: none;
+  /* background-color: #e6e6e6;
+  border-radius: 16px; */
+}
+
+.btn--contact-me:after {
+  position: absolute; /* Prevent underline of arrow */
+  padding-left: 0px; /* Add a little space between text and arrow */
+  content: "→"; /* Unicode hex for &raquo; */
+}
+
+​ .btn--contact-me:hover,
+tn-contact-me:active {
+  font-weight: 400;
+  text-decoration-thickness: 0.3rem;
 }
 
 #hobbies-description {
-    font-weight: 300;
-    color: grey;
-    font-size: 2rem;
-    margin-top: 7.2rem;
+  font-weight: 300;
+  color: grey;
+  font-size: 2rem;
+  margin-top: 7.2rem;
 }
 
-
-
-
-
+/*# sourceMappingURL=style.css.map */
