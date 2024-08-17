@@ -1,0 +1,55 @@
+.heading-primary {
+    backface-visibility: hidden;
+
+    &--main { /* Modifier */
+        color: $color-primary-dark-blue;
+        display: block;
+        font-size: 7.2rem;
+        letter-spacing: 0.32rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        text-transform: normal;
+        text-align: center;
+        font-family: $h1-heading-font;
+        font-weight: 900;
+    }
+
+    &__sub { /* Element */
+        color: #959595;
+        display: block;
+        font-weight: 500;
+        font-size: 3.2rem;
+        letter-spacing: 0.5rem; 
+        animation: moveInRight 1s ease-out;
+        font-family: "Work Sans", sans-serif;
+    }
+
+    &__sub-sub { /* Element */
+        margin-top: 3.2rem;
+        color: #565656;
+        display: block;
+        font-weight: 300;
+        font-size: 2.2rem;
+        letter-spacing: 0.4rem; 
+        padding: 0;
+        animation: moveInRight 1s ease-out;
+    }
+
+    &--sub-hobbies { /* Modifier */
+        font-size: 2rem;
+    }
+}
+
+.italics {
+    font-style: italic;
+}
+
+/* Inherit font settings from body */
+body {
+    font-family: $h1-subheadings-paragraphs-font;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #608991;
+    box-sizing: border-box;
+}

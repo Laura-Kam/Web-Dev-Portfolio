@@ -1,0 +1,59 @@
+/* the anchor tag is treated like text - so you can use text-align of its parent */
+/* link is a state of an anchor tag */
+/* link means an anchor is blue unvisited, and visited it turns purple
+after it is clicked in as a default colour. */
+
+
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: normal;
+        text-decoration: none;
+        padding: 0px 1.2rem;
+        display: inline-block;
+        margin: 0.8rem;
+        box-shadow: 0.2rem 0.2rem 0.2rem $shadow-color-grey; /* Simple shadow */
+        transition: all .2s; /* Transition applied to all CSS properties */
+    }
+
+    &:hover {
+        transform: translateY(-0.08rem);
+        box-shadow: 0 0.10rem 2.0rem rgba(0, 0, 0, .1);
+    }
+
+    &:active {
+        transform: translateY(0.05rem);
+        box-shadow: 0 0.5rem 0.1rem rgba(0, 0, 0, .05);
+    }
+
+    &--grey {
+        color: rgb(103, 103, 103);
+        background-color: #ebebeb;
+        border-radius: 1.6rem;
+        font-weight: 350;
+    }
+
+    &--contact-me {
+        color: #608991;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            color: #608991;
+            font-weight: 700;
+        }
+
+        &::after {
+            position: absolute; /* Prevent underline of arrow */
+            padding-left: 0px; /* Add a little space between text and arrow */
+            content: "\2192"; /* Unicode hex for &raquo; */
+        }
+
+        &:hover,
+        &:active {
+            font-weight: 400;
+            text-decoration-thickness: 0.3rem;
+        }
+    }
+}

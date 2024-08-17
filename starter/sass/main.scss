@@ -1,257 +1,29 @@
-/*
-COLORS:
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
 
-Light beige: #FAE3D9
-Medium blue: #8AC6D1
-Dark blue: #608991
-Call to action- peach: #FFB6B9 
-Subheading-text-dark-grey:#818181;
-paragraph-text-grey:#959595;
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
 
-*/
+@import "./pages/home";
 
-/*
-FONTS:
-Outfit-headings-paragraphs: "Outfit", sans-serif;
-Outfit-h1: "Cedarville Cursive", cursive;
-*/
-
-$color-primary-dark-blue: #608991;
-$color-primary-medium-blue: #8AC6D1;
-$color-CTA-peach: #FFB6B9;
-$color-bold-grey-text: #959595;
-$color-paragraph-grey-text: #565656;
-$color-white-text: white;
-
-$shadow-color-grey: rgba(0, 0, 0, 0.209);
-
-$h1-heading-font:"Cedarville Cursive";
-$h1-subheadings-paragraphs-font:"Outfit", sans-serif;
-
-/* css reset */
-
-
-
-*,
-*::after,
-* ::before {
-    margin: 0;
-    padding: 0;
-    /* box-sizing isn't usually inheritable so we must set it */
-    box-sizing: inherit;
-    padding: 0.8rem;
-}
-
-/* This way it is more accessible by percentage depending on user css */
-html {
-    font-size: 62.5%;
-}
-
-
-/* better to put font in body tag for inheritance, and efficiency/ only elements inside body needed fonts */
-/* in the universal selector - takes up memory applies to all elements on page */
-body {
-    font-family: $h1-subheadings-paragraphs-font;
-    font-weight: 400;
-    line-height: 1.7;
-    color: #608991;
-    box-sizing: border-box;
-}
-
-.header {
-height: 75vh;
-/* background-image: linear-gradient(to right,rgba(82, 117, 124, 0.877),rgba(113, 162, 170, 0.931)),url(../img/madrid-street.jpg); */
-/* https://unsplash.com/photos/road-between-houses-Zy-W7KWEyFE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash */
-/* covers entire header element space */
-/* background-size: cover; */
-/* keeps top of the image at the top when resized viewport */
-/* background-position: top; */
-border-radius: 1.6rem;
-/* this is the origin from where left and top are counted for logo-box */
-position: relative;
-
-    &__logo-box{
-    /* //absolute position based on parent - header */
-    position: absolute;
-}
-
-    &__logo {
-    height: 15.6rem;
-   border-radius: 1.6rem;
-top: 10%;
-left: 40%;
-}
-
-    &.header__text-box{
-        /* position absolute is in reference to parent element - which needs a position: relative, absolute, fixed, or sticky */
-         position: absolute;
-         top: 45%;
-         left: 50%;
-         /* this moves the element relative to current position -40% of its own width to the left and its own height upwards */
-         transform: translate(-50%, -40%);
-         /* the anchor tag is treated like text - so you can use text-align of its parent */
-         text-align: start;
-         width: 80%; /* Adjust as needed */
-         max-width: 1200px; /* Optional: To prevent it from becoming too wide on large screens */
-     }
-}
+@import "./components/button";
+@import "./layout/header";
 
 
 
 
 
 
-.heading-primary{
-
-    backface-visibility: hidden;
-&--main{
-    color: $color-primary-dark-blue;
-    display: block;
-    font-size: 7.2rem;
-    letter-spacing: 0.32rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    text-transform: normal;
-    text-align: center;
-    font-family: $h1-heading-font;
-    font-weight: 900;
-   
-}
-
-&-primary--sub{
-    color: #959595;
-    display: block;
-    font-weight: 500;
-    font-size: 3.2rem;
-    letter-spacing: 0.5rem; 
-    animation: moveInRight 1s ease-out;
-    font-family: "Work Sans", sans-serif;
-}
-
-  &-primary--sub-sub{
-    margin-top: 3.2rem;
-    color: #565656;
-    display: block;
-    font-weight: 300;
-    font-size: 2.2rem;
-    letter-spacing: 0.4rem; 
-    padding: 0;
-    animation: moveInRight 1s ease-out;}
-
-    &--sub-hobbies{
-        font-size: 2rem;
-    }
-}
 
 
 
 
 
 
-.italics {
-    font-style:italic;
-}
 
-
-/* 
-keyframes defines an animation rule which changes at specific times/points */
-
-@keyframes moveInLeft {
-    0% {
-opacity: 0;
-transform: translateX(-10rem)
-    }
-    80% {
-transform: translate(0.1rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-@keyframes moveInRight {
-    0% {
-opacity: 0;
-transform: translateX(10rem)
-    }
-
-80% {
-        transform: translateX(-0.10rem);
-}
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-/* the anchor tag is treated like text - so you can use text-align of its parent */
-/* link is a state of an anchor tag */
-/* link means an anchor is blue unvisited, and visited it turns purple
-after it is clicked in as a default colour. */
-
-.btn {
-
-    &:link,
-&:visited{
-text-transform: normal;
-text-decoration: none;
-padding: 0px 1.2rem 0px 1.2rem;
-/* inline block respects margin and padding like block elements, and usually the content determines
-an inline block's widht and height whereas block you can set it */
-display: inline-block;
-margin: 0.8rem;
-box-shadow: 0.2rem 0.2rem 0.2rem $shadow-color-grey; /* Simple shadow */
-/* transitions to be applied to all css properties that are changed 
-see translate below- applies to movement*/
-transition: all .2s;
-}
-
-&:hover{
-    transform: translateY(-0.08rem);
-    /* arguments x, y, blue, colour and opacity */
-    box-shadow: 0 0.10rem 2.0rem rgba(0,0,0,.1);
-}
-
-&:active{
-    transform: translateY(0.05rem);
-    box-shadow: 0 0.5rem 0.1rem rgba(0,0,0,.05);
-}
-
-&--grey{
-    color: rgb(103, 103, 103);
-background-color: #ebebeb;
-border-radius: 1.6rem;
-font-weight: 350;
-
-}
-&--contact-me{
-    color: #608991;
-    font-weight: 600;
-    text-decoration: none;
-    font-weight: 600;
-
-&:hover{
-    color: #608991;
-    font-weight: 700;
-    text-decoration: none;
-}
-&::after {
-    position: absolute; /* Prevent underline of arrow */
-    padding-left:0px; /* Add a little space between text and arrow */
-    content: "\2192"; /* Unicode hex for &raquo; */
-  }
-  &:hover,
-  tn-contact-me:active
-  {
-     
-  font-weight: 400;
-  text-decoration-thickness: 0.3rem;
-  }
-}
-
-
-}
 
 
 
