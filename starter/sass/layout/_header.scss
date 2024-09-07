@@ -22,7 +22,7 @@
     left: 40%;
     }
     
-        &.header__text-box{
+        &__text-box{
             /* position absolute is in reference to parent element - which needs a position: relative, absolute, fixed, or sticky */
              position: absolute;
              top: 45%;
@@ -31,8 +31,8 @@
              transform: translate(-50%, -40%);
              /* the anchor tag is treated like text - so you can use text-align of its parent */
              text-align: start;
-             width: 80%; /* Adjust as needed */
-             max-width: 1200px; /* Optional: To prevent it from becoming too wide on large screens */
+             width: 90%; /* Adjust as needed */
+             max-width: 1024px; /* Optional: To prevent it from becoming too wide on large screens */
          }
     }
     

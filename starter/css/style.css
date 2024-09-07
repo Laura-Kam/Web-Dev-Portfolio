@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* 
 keyframes defines an animation rule which changes at specific times/points */
 @keyframes moveInLeft {
@@ -55,9 +54,11 @@ html {
   animation-duration: 1s;
   animation-timing-function: ease-out;
   text-transform: normal;
-  text-align: center;
+  text-align: start;
   font-family: "Cedarville Cursive";
   font-weight: 900;
+  display: inline-block;
+  padding-left: 0;
 }
 .heading-primary__sub { /* Element */
   color: #959595;
@@ -69,17 +70,20 @@ html {
   font-family: "Work Sans", sans-serif;
 }
 .heading-primary__sub-sub { /* Element */
-  margin-top: 3.2rem;
-  color: #565656;
+  margin-top: 0.8rem;
+  color: #848383;
   display: block;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.2rem;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.32rem;
   padding: 0;
   animation: moveInRight 1s ease-out;
 }
 .heading-primary--sub-hobbies { /* Modifier */
-  font-size: 2rem;
+  font-size: 2.2rem;
+  display: inline-block;
+  padding: 0;
+  margin-top: 1.6rem;
 }
 
 .italics {
@@ -123,21 +127,34 @@ after it is clicked in as a default colour. */
   font-weight: 350;
 }
 .btn--contact-me {
-  color: #608991;
+  color: white;
   font-weight: 600;
   text-decoration: none;
+  padding: 0;
+  font-size: 2.4rem;
+  background-color: #d9b224;
+  border-radius: 1.6rem;
+  padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+  text-align: center;
+  display: inline-block;
+  margin-top: 1.6rem;
+  line-height: 1.2;
+}
+.btn--contact-me-arrow {
+  font-size: 3.2rem;
+  font-weight: 700;
+  vertical-align: middle; /* Vertically align to middle of the text */
+  padding: 0;
 }
 .btn--contact-me:hover {
-  color: #608991;
+  color: white;
   font-weight: 700;
-}
-.btn--contact-me::after {
-  position: absolute; /* Prevent underline of arrow */
-  padding-left: 0px; /* Add a little space between text and arrow */
-  content: "→"; /* Unicode hex for &raquo; */
+  background-color: #c9a41f;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.209); /* Simple shadow */
+  transition: all 0.2s; /* Transition applied to all CSS properties */
 }
 .btn--contact-me:hover, .btn--contact-me:active {
-  font-weight: 400;
+  font-weight: 700;
   text-decoration-thickness: 0.3rem;
 }
 
@@ -163,7 +180,7 @@ after it is clicked in as a default colour. */
   top: 10%;
   left: 40%;
 }
-.header.header__text-box {
+.header__text-box {
   /* position absolute is in reference to parent element - which needs a position: relative, absolute, fixed, or sticky */
   position: absolute;
   top: 45%;
@@ -172,8 +189,41 @@ after it is clicked in as a default colour. */
   transform: translate(-50%, -40%);
   /* the anchor tag is treated like text - so you can use text-align of its parent */
   text-align: start;
-  width: 80%; /* Adjust as needed */
-  max-width: 1200px; /* Optional: To prevent it from becoming too wide on large screens */
+  width: 90%; /* Adjust as needed */
+  max-width: 1024px; /* Optional: To prevent it from becoming too wide on large screens */
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  background-color: #eee;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^=col-] {
+  background-color: blue;
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.row .col-2-of-3 {
+  width: calc(2 * (100% - 3 * 6rem) / 4);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
 }
 
 /*# sourceMappingURL=style.css.map */
