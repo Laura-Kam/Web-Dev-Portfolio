@@ -10,9 +10,11 @@
         animation-duration: 1s;
         animation-timing-function: ease-out;
         text-transform: normal;
-        text-align: center;
+        text-align: start;
         font-family: $h1-heading-font;
         font-weight: 900;
+        display: inline-block;
+        padding-left: 0;
     }
 
     &__sub { /* Element */
@@ -26,18 +28,21 @@
     }
 
     &__sub-sub { /* Element */
-        margin-top: 3.2rem;
-        color: #565656;
+        margin-top: 0.8rem;
+        color: #848383;
         display: block;
-        font-weight: 300;
+        font-weight: 400;
         font-size: 2.2rem;
-        letter-spacing: 0.4rem; 
+        letter-spacing: 0.32rem; 
         padding: 0;
         animation: moveInRight 1s ease-out;
     }
 
     &--sub-hobbies { /* Modifier */
-        font-size: 2rem;
+        font-size: 2.2rem;
+        display: inline-block;
+        padding: 0;
+        margin-top: 1.6rem;
     }
 }
 
@@ -53,3 +58,5 @@ body {
     color: #608991;
     box-sizing: border-box;
 }
+
+

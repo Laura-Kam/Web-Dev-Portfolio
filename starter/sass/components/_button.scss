@@ -35,25 +35,51 @@ after it is clicked in as a default colour. */
     }
 
     &--contact-me {
-        color: #608991;
+        color: white;
         font-weight: 600;
         text-decoration: none;
+        padding:0;
+        font-size: 2.4rem;
+        background-color:#d9b224;
+        border-radius: 1.6rem;
+        padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+        text-align:center;
+        display: inline-block;
+        margin-top: 1.6rem;
+        line-height: 1.2;
+     
+
+        &-arrow{
+            font-size: 3.2rem;
+            font-weight: 700;
+            vertical-align: middle; /* Vertically align to middle of the text */
+            padding: 0;
+        }
 
         &:hover {
-            color: #608991;
+            color: white;
             font-weight: 700;
+            background-color: #c9a41f;
+            box-shadow: 0.2rem 0.2rem 0.2rem $shadow-color-grey; /* Simple shadow */
+            transition: all .2s; /* Transition applied to all CSS properties */
         }
 
-        &::after {
-            position: absolute; /* Prevent underline of arrow */
-            padding-left: 0px; /* Add a little space between text and arrow */
-            content: "\2192"; /* Unicode hex for &raquo; */
-        }
+        // &::after {
+        //     position: absolute; /* Prevent underline of arrow */
+        //     padding: 0px; /* Add a little space between text and arrow */
+        //     content: "\2192"; /* Unicode hex for &raquo; */
+        //     padding-top: 2px;
+        //     text-shadow: 1px 0 0 currentColor, -1px 0 0 currentColor; /* Creates a thicker appearance */
+        // vertical-align: middle; /* Vertically aligns with text */
+        // }
+
+
 
         &:hover,
         &:active {
-            font-weight: 400;
+            font-weight: 700;
             text-decoration-thickness: 0.3rem;
         }
     }
 }
+

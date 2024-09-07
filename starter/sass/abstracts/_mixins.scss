@@ -1,0 +1,10 @@
+@mixin clearfix{
+    &::after{
+        //need content to make after pseudo element work.
+        content:"";
+        //displays like an excel table
+        display: table;
+        //go below any elements floated to the left or right
+        clear: both;
+    }
+}
